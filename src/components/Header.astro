@@ -1,0 +1,50 @@
+---
+import HeaderButton from "./HeaderButton.astro";
+console.log("javascript");
+---
+
+<header class="py-8 px-4 mx-auto max-w-xl lg:px-6">
+    <div class="mx-auto text-center mb-8 lg:mb-16">
+        <h2 class="mb-4 text-5xl tracking-tight font-extrabold text-white">
+            SpaceX launches
+        </h2>
+        <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">
+            All the information about SpaceX launches
+        </p>
+    </div>
+  <nav
+    class="flex flex-col items-center justify-between w-full text-center md:flex-row"
+  >
+    <HeaderButton class="text-white" href="/">
+        <svg slot="before" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M11.036 5.058a8 8 0 1 0 8.706 9.965"></path>
+            <path d="M12 21v-11l-7.5 4"></path>
+            <path d="M17.5 3a2.5 2.5 0 1 1 0 5l-11 -5a2.5 2.5 0 0 0 -.67 4.91"></path>
+            <path d="M9 12v8"></path>
+            <path d="M16 13h-.01"></path>
+         </svg>
+      Últimos lanzamientos
+    </HeaderButton>
+    <HeaderButton class="text-white" href="/">
+        <svg slot="before" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+            <path d="M12 12l-2 -3"></path>
+            <path d="M12 7v5"></path>
+         </svg>
+        Sobre el proyecto
+    </HeaderButton>
+    <HeaderButton class="text-white" href="/">
+        <svg slot="before" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M4 16l6 -7l5 5l5 -6"></path>
+            <path d="M15 14m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+            <path d="M10 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+            <path d="M4 16m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+            <path d="M20 8m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+         </svg>
+      Últimos lanzamientos
+    </HeaderButton>
+  </nav>
+</header>
