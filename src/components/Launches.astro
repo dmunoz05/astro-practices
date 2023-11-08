@@ -1,39 +1,21 @@
 ---
-import { type APISpaceXResponse } from "../types/api";
+import CardLaunch from "./CardLaunch.astro";
+import { getLatestLaunches } from "../services/spacex"
 
-// const res = await fetch("https://api.spacexdata.com/v2/launches/");
-const res = await fetch("https://api.spacexdata.com/v5/launches/");
-
-const data = await res.json();
-
-console.log(data);
-
-let datajson = {
-  totalData: [],
-};
-
-for (let index = 0; index < data.length; index++) {
-  if (index < 13) {
-    datajson.totalData.push(data[index]);
-  }
-}
-console.log(datajson.totalData);
-
-// const {totalData} = JSON.stringify(datajson.totalData) as APISpaceXResponse;
-
-const { totalData: launches } = datajson as any;
+const launches = await getLatestLaunches()
 ---
 
 <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
   {
-    launches.map((launch) => (
+    launches.map(({id, links, details, flight_number, success }) => (
       <>
-        <br />
-        <article>
-          <img src={launch.links.patch.small} alt="" />
-          <br/>
-          <h1>Launch #{launch.id}</h1>
-        </article>
+        <CardLaunch
+          id={id}
+          img={links.patch.small}
+          details={details}
+          flightNumber={flight_number}
+          success={success}
+        />
       </>
     ))
   }

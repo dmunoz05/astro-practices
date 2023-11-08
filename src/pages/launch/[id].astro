@@ -1,0 +1,20 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getLaunchById } from "../../services/spacex";
+
+const { id } = Astro.params;
+
+console.log({ id });
+
+let launch;
+
+if (id) {
+  launch = await getLaunchById({ id });
+}
+console.log(launch);
+
+export const getStaticPaths = (() => {
+  return [{ params: { id: "5e9d0d95eda69955f709d1eb" } }];
+});
+
+---
