@@ -1,4 +1,5 @@
 ---
+import { Counter } from "./Counter";
 import HeaderButton from "./HeaderButton.astro";
 console.log("javascript");
 ---
@@ -12,6 +13,10 @@ console.log("javascript");
             All the information about SpaceX launches
         </p>
     </div>
+
+    <Counter transition:persist client:visible />
+    <Counter transition:persist client:visible />
+
   <nav
     class="flex flex-col items-center justify-between w-full text-center md:flex-row"
   >
